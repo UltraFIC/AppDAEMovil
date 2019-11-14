@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppDAEMovil.Views.Inventarios.FicViReporteAcumuladosLista"
              xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
-             
              >
 
     <ContentPage.Resources>
@@ -38,9 +37,9 @@
                     />
                 </StackLayout>
 
-              <!--Clicked="FicClicked_Consultar"-->
+              
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                    <Button x:Name="FicImageButton_Consultar" 
+                    <Button x:Name="FicButton_Consultar" 
                                  Text="Consultar"
                                  FontAttributes="Bold"
                                  WidthRequest="100"
@@ -48,10 +47,10 @@
                                  HorizontalOptions="Center"
                                  VerticalOptions="Center"
                                  BackgroundColor="DeepSkyBlue"
-                                 
-                    />
-                    <!--Clicked="FicClicked_Cancelar"-->
-                    <Button x:Name="FicImageButton_Cancelar" 
+                                 Clicked="FicButton_Clicked_Consultar"
+                     />
+                    
+                    <Button x:Name="FicButton_Cancelar" 
                                  Text="Cancelar"   
                                  FontAttributes="Bold"
                                  WidthRequest="100"
@@ -59,11 +58,9 @@
                                  HorizontalOptions="Center"
                                  VerticalOptions="Center"
                                  BackgroundColor="#ed1c16"
-                                 
+                                 Clicked="FicButton_Clicked_Cancelar"
                     />
                 </StackLayout>
-
-
 
                 <!--GridDoubleTappedCommand="{Binding DoubleTappedCommandAction}"
                 SelectedItem="{Binding FicSfDataGrid_SelectItem_Acumulado}"-->
@@ -103,10 +100,6 @@
                 </Grid>
 
             </StackLayout>
-
-        
-
-    
-        
+      
     </ContentPage.Content>
 </ContentPage>

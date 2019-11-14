@@ -8,7 +8,7 @@ using AppDAEMovil.Models;
 namespace AppDAEMovil.Data
 {
 
-    public class FicDataBaseContex : DbContext
+    public class FicDBContext : DbContext
     {
         private readonly string FicLoDataBasePath;
         
@@ -28,7 +28,7 @@ namespace AppDAEMovil.Data
         public DbSet<zt_cat_ubicaciones> zt_cat_ubicaciones { get; set; }
         public DbSet<zt_almacenes_ubicaciones> zt_almacenes_ubicaciones { get; set; }
 
-        public FicDataBaseContex(string FicPaDataBasePath)
+        public FicDBContext(string FicPaDataBasePath)
         {   //FIC: /data/user/0/com.companyname.AppEvaMovilRoot/files/DB_COCACOLA_NAY.db3
             this.FicLoDataBasePath = FicPaDataBasePath;
             //FIC: Se manda llamar el metodo que crea la BD localmente en la plataforma.
