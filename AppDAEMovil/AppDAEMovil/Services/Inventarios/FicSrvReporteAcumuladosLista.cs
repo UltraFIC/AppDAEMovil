@@ -27,12 +27,13 @@ namespace AppDAEMovil.Services.Inventarios
         //FIC: Metodo que obtiene los registros de todos los catalogos de la nube ======================================
         public async Task<List<zt_inventarios_acumulados>>FicIMetGetListaAcumuladosWebApi(int FicPaIdInventario)
         {
-            //const string url = "http://localhost:54068/api/inventarios/importar_catalogos_individual";
-            string url = FicAppSettings.FicUrlBase.ToString() + "api/inventarios/inv_acumulados_list" +
+            //                    https://localhost:44300/api/inventarios/inv_acumulados_list?FicPaIdInventario=21
+            //const string url = "https://localhost:44300/api/inventarios/inv_acumulados_list?FicPaIdInventario=21";
+            string FicURL = FicAppSettings.FicUrlBase.ToString() + "api/inventarios/inv_acumulados_list" +
                                                                 "?FicPaIdInventario=" + FicPaIdInventario;
             try
             {
-                var FicResponse = await FicHttpClient.GetAsync(url);
+                var FicResponse = await FicHttpClient.GetAsync(FicURL);
                 
                 return FicResponse.IsSuccessStatusCode ? JsonConvert.DeserializeObject<List<zt_inventarios_acumulados>>(await FicResponse.Content.ReadAsStringAsync()) : null;
             }
